@@ -86,9 +86,16 @@ footer {
 
 div#main {
   /* display: block; */
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 div#main img {
   height: 15rem;
   border-radius: 40px;
+}
+.menuItem div {
+  font-family: "Amatic SC", cursive;
+  text-align: center;
+  font-size: 1.7rem;
 }

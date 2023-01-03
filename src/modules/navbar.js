@@ -1,5 +1,6 @@
 function createLink(text) {
   const aLink = document.createElement("a");
+  aLink.id = `${text.toLowerCase()}BTN`;
   aLink.innerText = text;
   return aLink;
 }
@@ -12,13 +13,16 @@ function createNav() {
   title.innerText = "Breakfast Bar";
 
   linksDiv.className = "links";
-  linksDiv.appendChild(createLink("Home"));
-  linksDiv.appendChild(createLink("Menu"));
-  linksDiv.appendChild(createLink("Contact"));
+  const homeBTN = createLink("Home");
+  const menuBTN = createLink("Menu");
+  const contactBTN = createLink("Contact");
+  linksDiv.appendChild(homeBTN);
+  linksDiv.appendChild(menuBTN);
+  linksDiv.appendChild(contactBTN);
 
   navTag.appendChild(title);
   navTag.appendChild(linksDiv);
-  return navTag;
+  return { navTag, homeBTN, menuBTN, contactBTN };
 }
 
 export default createNav;
