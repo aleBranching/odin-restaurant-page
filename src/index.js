@@ -2,6 +2,7 @@ import createNav from "./modules/navbar";
 import createFooter from "./modules/footer";
 import createHomeMain from "./modules/home";
 import createMenuPage from "./modules/menu";
+import createContact from "./modules/contact";
 // import cat from "./blincat.jpg";
 
 // console.log("Change made ");
@@ -22,12 +23,21 @@ function clearContent() {
 const navBar = createNav();
 
 contentDiv.appendChild(navBar.navTag);
+const mainDiv = document.createElement("div");
+mainDiv.id = "main";
 const homeMain = createHomeMain();
-contentDiv.appendChild(homeMain);
+contentDiv.appendChild(mainDiv);
+mainDiv.appendChild(homeMain);
+
 contentDiv.appendChild(createFooter());
 
 navBar.homeBTN.addEventListener("click", () => {
-  console.log(`I've been clicked by`);
+  //   navBar.homeBTN.classList.toggle = "clicked";
+  //   console.log(`I've been clicked by`);
+  const mainContent = document.querySelector("#main");
+  clearContent();
+  console.log(mainContent);
+  mainContent.appendChild(homeMain);
 });
 
 navBar.menuBTN.addEventListener("click", () => {
@@ -38,4 +48,8 @@ navBar.menuBTN.addEventListener("click", () => {
   mainContent.appendChild(createMenuPage());
 });
 
-navBar.contactBTN.addEventListener("click", () => {});
+navBar.contactBTN.addEventListener("click", () => {
+  const mainContent = document.querySelector("#main");
+  clearContent();
+  mainContent.appendChild(createContact());
+});

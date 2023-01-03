@@ -1,9 +1,8 @@
 import cat from "./blincat.jpg";
 
-export default function homeMain() {
-  const mainDiv = document.createElement("div");
-  mainDiv.id = "main";
-
+export default function createHomeMain() {
+  const containerDiv = document.createElement("div");
+  containerDiv.classList = "homeMain";
   const titleDiv = document.createElement("div");
   titleDiv.innerText = "Voted the best brunch place of 2022";
 
@@ -12,8 +11,8 @@ export default function homeMain() {
   const myIcon = new Image();
   myIcon.src = cat;
 
-  mainDiv.appendChild(titleDiv);
-  mainDiv.appendChild(myIcon);
+  containerDiv.appendChild(titleDiv);
+  containerDiv.appendChild(myIcon);
 
-  return mainDiv;
+  return containerDiv;
 }
